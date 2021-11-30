@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link style="stylesheet" href="weapons/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+  <style>
+    body {
+      background-color: #212121f9;
+      font-family: sans-serif;
+      }
+    *{
+        padding:0;
+        margin:0;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=""></a>
+      <img src="https://a.d-cd.net/f55485as-960.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Market</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'weapons:weap_page' %}">Оружие</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'weapons:knife_page' %}">Ножи</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Аксессуары
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Брелки</a></li>
+            <li><a class="dropdown-item" href="#">Коврики</a></li>
+            <li><a class="dropdown-item" href="#">Скины</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <div class="col-sm-10">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+  </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="col-sm-6">
+      <img class="d-block w-100" src="https://cq-esports.com/storage/uploads/images/78766/112193.jpg" style="width:800;height:336px" alt="Первый слайд">
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://sun9-43.userapi.com/Rx99ueUUtQlPSg208sTp6fF9yYDNUAOz_iPeBw/mJVFBnQQL_Q.jpg" style="width:598;height:336px" alt="Второй слайд">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://dmagame.ru/wp-content/uploads/2021/02/fedb5310-ae69-4490-b096-f06f070699ed.jpg" style="width:598;height:336px" alt="Третий слайд">
+    </div>
+  </div>
+</div>
+    {% block content %}{% endblock %}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

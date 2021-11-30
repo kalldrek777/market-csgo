@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<div class="container my-5">
+    {% include 'form.html' with button='Найти' %}
+  <div class="row">
+    <style>
+  .card {
+  height: 90%;
+  margin: 5px;
+  padding: 10px;
+}
+</style>
+{% for i in page_obj %}
+      {% if i.category == 'Ножи' %}
+            <div class="col-md-3">
+        <div class="card text-white bg-secondary mb-4">
+          <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.text}}</p>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-success bg-dark">{{i.category}}</li>
+            </ul>
+            <a href="#" class="btn btn-primary">Перейти</a>
+          </div>
+        </div>
+        </div>
+      {% endif %}
+{% endfor %}
+
+    <div class="container my-5">
+  <nav aria-label="Example">
+    <ul class="pagination justify-content-center pagination-md">
+    <li class="page-item">
+      {% if page_obj.has_previous %}
+           <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <span aria-hidden="true">&laquo;</span>
+           </a>
+      {% endif %}
+    </li>
+
+      {% for page in page_obj.paginator.page_range %}
+    <li class="page-item {% if page == page_obj.number %} active {% endif %}">
+        <a class="page-link" href="?page={{page}}">{{ page }}</a>
+    </li>
+      {% endfor %}
+
+    <li class="page-item">
+      {% if page_obj.has_next %}
+           <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+            <span aria-hidden="true">&raquo;</span>
+           </a>
+      {% endif %}
+    </li>
+  </ul>
+  </nav>
+    </div>
+  </div>
+</div>
+{% endblock %}

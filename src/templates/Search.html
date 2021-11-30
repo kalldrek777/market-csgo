@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <style>
+  .card {
+  height: 90%;
+  margin: 5px;
+  padding: 10px;
+}
+</style>
+{% for i in qs %}
+        {% if query in i.name %}
+        <div class="col-md-3">
+        <div class="card text-white bg-secondary mb-4">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.text}}</p>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-success bg-dark">{{i.category}}</li>
+            </ul>
+            <a href="#" class="btn btn-primary">Перейти</a>
+          </div>
+        </div>
+              </div>
+        {% endif %}
+{% endfor %}
+    </div>
+</div>
+{% endblock %}
