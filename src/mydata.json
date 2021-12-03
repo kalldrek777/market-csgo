@@ -1,0 +1,57 @@
+[
+{
+  "model": "weapons.product",
+  "pk": 2,
+  "fields": {
+    "name": "AK-47",
+    "text": "dfsdfsdf sdfsdfsdfsd sdfsdf",
+    "img": "scale_1200_HciCTYH.jpg",
+    "category": "Оружия",
+    "date": "2021-11-08T14:25:12Z"
+  }
+},
+{
+  "model": "weapons.product",
+  "pk": 4,
+  "fields": {
+    "name": "M4A4",
+    "text": "fsdfs fsdfsdf sdfsdfsd",
+    "img": "Cards_height_WrMdpbk.png",
+    "category": "Оружия",
+    "date": "2021-11-08T14:27:51Z"
+  }
+},
+{
+  "model": "weapons.product",
+  "pk": 6,
+  "fields": {
+    "name": "Нож бабочка",
+    "text": "ываылв ывлаывл",
+    "img": "scale_1200_PX9o4qI.jpg",
+    "category": "Ножи",
+    "date": "2021-11-19T12:08:17Z"
+  }
+},
+{
+  "model": "weapons.product",
+  "pk": 7,
+  "fields": {
+    "name": "Нож охотничий",
+    "text": "ваыва ывафывафыва ыва",
+    "img": "scale_1200_PX9o4qI_XplBqiK.jpg",
+    "category": "Ножи",
+    "date": "2021-11-19T12:30:05Z"
+  }
+},
+{
+  "model": "weapons.product",
+  "pk": 8,
+  "fields": {
+    "name": "Нож сталь",
+    "text": "ываыв выаываыв",
+    "img": "images/code.png",
+    "category": "Ножи",
+    "date": "2021-11-19T14:06:53Z"
+  }
+}
+]
