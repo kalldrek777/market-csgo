@@ -14,7 +14,7 @@
   "model": "weapons.product",
   "pk": 9,
   "fields": {
-    "name": "M4A4-s",
+    "name": "M4A1-s",
     "text": "fdsfs asdfasdf asdfasdfas",
     "img": "images/Cards_height.png",
     "category": "Оружия",
