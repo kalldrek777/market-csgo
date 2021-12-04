@@ -14,7 +14,7 @@
   "model": "weapons.product",
   "pk": 9,
   "fields": {
-    "name": "M4A1-s",
+    "name": "M4A4-s",
     "text": "fdsfs asdfasdf asdfasdfas",
     "img": "images/Cards_height.png",
     "category": "Оружия",
@@ -52,17 +52,6 @@
     "img": "images/code_Q6JyC3i.png",
     "category": "Ножи",
     "date": "2021-12-04T11:04:03Z"
-  }
-},
-{
-  "model": "weapons.product",
-  "pk": 13,
-  "fields": {
-    "name": "M4A4",
-    "text": "ывафы авыфвафываыфва ывааы",
-    "img": "images/tick-2371782_1920_K7JvwxB.jpg",
-    "category": "Оружия",
-    "date": "2021-12-04T11:04:29Z"
   }
 },
 {
