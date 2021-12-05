@@ -2,6 +2,7 @@
 {% block title %}{% endblock %}
 {% block content %}
 <div class="container my-5">
+    {% include 'form.html' with button='Найти' %}
     <div class="row">
         <style>
   .card {
@@ -25,8 +26,10 @@
           </div>
         </div>
               </div>
+        {% else %}
         {% endif %}
 {% endfor %}
     </div>
+    <p> qs.text </p>
 </div>
 {% endblock %}
