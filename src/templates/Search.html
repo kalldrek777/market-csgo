@@ -11,7 +11,7 @@
   padding: 10px;
 }
 </style>
-{% for i in qs %}
+{% for i in page_obj %}
         {% if query in i.name %}
         <div class="col-md-3">
         <div class="card text-white bg-secondary mb-4">
@@ -29,7 +29,35 @@
         {% else %}
         {% endif %}
 {% endfor %}
+
+<div class="container my-5">
+  <nav aria-label="Example">
+    <ul class="pagination justify-content-center pagination-md">
+    <li class="page-item">
+      {% if page_obj.has_previous %}
+           <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <span aria-hidden="true">&laquo;</span>
+           </a>
+      {% endif %}
+    </li>
+
+      {% for page in page_obj.paginator.page_range %}
+    <li class="page-item {% if page == page_obj.number %} active {% endif %}">
+        <a class="page-link" href="?page={{page}}">{{ page }}</a>
+    </li>
+      {% endfor %}
+
+    <li class="page-item">
+      {% if page_obj.has_next %}
+           <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+            <span aria-hidden="true">&raquo;</span>
+           </a>
+      {% endif %}
+    </li>
+  </ul>
+  </nav>
+</div>
+
     </div>
-    <p> qs.text </p>
 </div>
 {% endblock %}

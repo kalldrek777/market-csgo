@@ -10,8 +10,11 @@ __all__ = (
 
 
 def knife(request):
-    qs = Product.objects.all().order_by('-date')
+    qs = Product.objects.all().order_by('-date').filter(category='Ножи')
     paginator = Paginator(qs, 8)  # Show 8 contacts per page.
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     form = SearchForm()
     if request.method == 'POST':
@@ -20,10 +23,16 @@ def knife(request):
             form_query = form.cleaned_data
             #   print(form_query['query'])
             query = form_query['query']
-            return render(request, 'Search.html', {'qs': qs, 'form': form, 'query': query})
+            a = []
+            qs = Product.objects.all().order_by('-date')
+            for i in qs:
+                if query in i.name:
+                    a.append(i)
+                    paginator = Paginator(a, 8)  # Show 8 contacts per page.
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+                    page_number = request.GET.get('page')
+                    page_obj = paginator.get_page(page_number)
+            return render(request, 'Search.html', {'page_obj': page_obj, 'form': form, 'query': query})
 
     dict = {'page_obj': page_obj, 'form': form}
 
@@ -31,7 +40,7 @@ def knife(request):
 
 
 def weapons(request):
-    qs = Product.objects.all().order_by('-date')
+    qs = Product.objects.all().order_by('-date').filter(category='Оружия')
     paginator = Paginator(qs, 8)  # Show 8 contacts per page.
 
     form = SearchForm()
@@ -41,7 +50,16 @@ def weapons(request):
             form_query = form.cleaned_data
             #   print(form_query['query'])
             query = form_query['query']
-            return render(request, 'Search.html', {'qs': qs, 'form': form, 'query': query})
+            a = []
+            qs = Product.objects.all().order_by('-date')
+            for i in qs:
+                if query in i.name:
+                    a.append(i)
+                    paginator = Paginator(a, 8)  # Show 8 contacts per page.
+
+                    page_number = request.GET.get('page')
+                    page_obj = paginator.get_page(page_number)
+            return render(request, 'Search.html', {'page_obj': page_obj, 'form': form, 'query': query})
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
