@@ -8,7 +8,6 @@ class Product(models.Model):
     img = models.ImageField(unique=False, verbose_name='Изображение продукта', upload_to='images/')
     category = models.CharField(max_length=20, unique=False,  verbose_name='Категория продукта')
     date = models.DateTimeField(verbose_name='дата')
-     # изображения, + поисковая система, + категории в админке
 
     def __str__(self):
         return self.name
