@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'weapons',
 ]
 
@@ -77,6 +79,12 @@ TEMPLATES = [
         },
     },
 ]
+
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'hpdhfofod',
+             'API_KEY': '384211981575325',
+             'API_SECRET': 'PbNx3ieCckBpQ3km2CezhC9B3WM'
+            }
 
 WSGI_APPLICATION = 'Market.wsgi.application'
 
@@ -139,6 +147,8 @@ USE_TZ = True
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
