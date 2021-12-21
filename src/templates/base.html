@@ -1,41 +1,24 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link style="stylesheet" href="weapons/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
 
     <title>{% block title %}{% endblock %}</title>
   </head>
+<style>  body {
+    background-color: #212121f9;
+  }
+</style>
   <body>
-  <style>
-    body {
-      background-color: #212121f9;
-      font-family: sans-serif;
-      }
-    *{
-        padding:0;
-        margin:0;
-    }
-      .carousel-inner img {
-    height: 450px;
-  }
-  .carousel {
-  left: 50%;
-  width: 1300px;
-  top: 225px;
-  transform: translate(-50%,-50%);
-  }
-
-  </style>
-
-  {% load static %}
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -56,14 +39,14 @@
           <a class="nav-link" href="{% url 'weapons:knife_page' %}">Ножи</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Аксессуары
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Брелки</a></li>
-            <li><a class="dropdown-item" href="#">Коврики</a></li>
-            <li><a class="dropdown-item" href="#">Скины</a></li>
-          </ul>
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Другое
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'weapons:wear' %}">Одежда</a>
+            <a class="dropdown-item" href="{% url 'weapons:stickers' %}">Наклейки</a>
+            <a class="dropdown-item" href="{% url 'weapons:accessories' %}">Аксессуары</a>
+          </div>
         </li>
       </ul>
     </div>

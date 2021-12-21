@@ -4,30 +4,23 @@
 <div class="container my-5">
     {% include 'form.html' with button='Найти' %}
     <div class="row">
-        <style>
-  .card {
-  height: 90%;
-  margin: 5px;
-  padding: 10px;
-}
-</style>
+
 {% for i in page_obj %}
-        {% if query in i.name %}
-        <div class="col-md-3">
-        <div class="card text-white bg-secondary mb-4">
-          <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{i.name}}</h5>
-            <p class="card-text">{{i.text}}</p>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item text-success bg-dark">{{i.category}}</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Перейти</a>
-          </div>
-        </div>
-              </div>
-        {% else %}
-        {% endif %}
+      <div class="col-md-3">
+<div class="card text-white bg-secondary mb-4">
+  <img id="card_img" class="card-img-top" src="{{i.img.url}}" alt="Card image cap">
+  <div id="card_body" class="card-body">
+    <h5 id="title" class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.text}}</p>
+    <ul class="list-group list-group-flush">
+    <li id="category_text" class="list-group-item text-success">{{i.category}}</li>
+    </ul>
+      <a href="{{i.link_product}}" target="_blank">
+        <button id="btn-card" type="submit" class="btn btn-primary">Перейти</button>
+      </a>
+  </div>
+</div>
+      </div>
 {% endfor %}
 
 <div class="container my-5">
