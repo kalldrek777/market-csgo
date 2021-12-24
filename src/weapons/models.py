@@ -1,7 +1,6 @@
 from django.db import models
 # import datetime
 
-a = 'Ножи',
 categorys = [
     ('Ножи', 'Ножи'),
     ('Оружие', 'Оружие'),
