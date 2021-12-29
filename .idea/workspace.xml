@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77acd4a6-c289-4cfa-a370-85d67c6b6dec" name="Default Changelist" comment="Поправки" />
+    <list default="true" id="77acd4a6-c289-4cfa-a370-85d67c6b6dec" name="Default Changelist" comment="Поправки">
+      <change beforePath="$PROJECT_DIR$/src/Market/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Market/settings/production.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
